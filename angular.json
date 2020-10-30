@@ -83,6 +83,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
+            "codeCoverage": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "jasmine-play"
+    }
+  },
+  "defaultProject": "jasmine-play",
+  "cli": {
+    "analytics": false
+  }
 }
