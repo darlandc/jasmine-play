@@ -1,20 +1,17 @@
 <form [formGroup]="addForm">
-<div class="post-input">
-  <mat-form-field>
-    <input
-      type="text"
-      formControlName="title"
-      matInput
-      #message
-      maxlength="15"
-      placeholder="Title"
-    />
-    <mat-hint>
-    <strong>Give us a unique post title please!</strong>
-    </mat-hint>
-    <mat-error *ngIf="error"></mat-error>
-  </mat-form-field>
-  <mat-form-field>
+  <div class="post-input">
+    <mat-form-field>
+      <input
+        type="text"
+        formControlName="title"
+        matInput
+        #message
+        maxlength="15"
+        placeholder="Title"
+      />
+      <mat-error *ngIf="error"></mat-error>
+    </mat-form-field>
+    <mat-form-field>
       <input
         type="text"
         formControlName="description"
@@ -22,10 +19,8 @@
         maxlength="100"
         placeholder="Description"
       />
-      <mat-hint>
-      <strong>Give us post description please!</strong>
-      </mat-hint>
       <mat-error *ngIf="error"></mat-error>
     </mat-form-field>
-</div>
+    <button class="addPost" (click)="add()" mat-button>Add</button>
+  </div>
 </form>
