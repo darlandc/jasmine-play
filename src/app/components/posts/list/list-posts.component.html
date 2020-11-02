@@ -1,18 +1,6 @@
-<h2>Post Component</h2>
-<button (click)="tap($event)" aria-setsize="20">Tap!</button>
-
-<div class="main">
-  <div class="wall">
-  <app-post
-    *ngFor="let post of posts"
-    (deleteMe)="delete($event)"
-    [post]="post"
-    ></app-post>
-  </div>
-</div>
-
-<mat-card>
+<p *ngFor="let post of posts">
 <mat-card-actions>
+    {{ post.title }} <span> {{ post.id }} </span>
 <!--   <button
   mat-icon-button
   [ngClass]="{ liked: post.myLuke }"
@@ -28,4 +16,4 @@
     Delete
 </button> -->
 </mat-card-actions>
-</mat-card>
+</p>
