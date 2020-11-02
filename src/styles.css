@@ -5,3 +5,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: whit
 h1 { font-size: 24px; color: slateblue }
 span { font-size: 16px; color: greenyellow }
 strong { color: white }
+span.mat-button-wrapper { font-size: 14px; }

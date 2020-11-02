@@ -1,3 +1,4 @@
+import { ComponentsModule } from './components/components.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AddPostComponent } from './components/posts/add/add-post.component';
@@ -10,18 +11,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 
-import { PostComponent } from './components/posts/post.component';
+import { ItemPostComponent } from './components/posts/item/item-post.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestComponent } from './components/test/test.component';
 import { ListPostsComponent } from './components/posts/list/list-posts.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PostComponent,
-    AddPostComponent,
-    TestComponent,
-    ListPostsComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -30,14 +27,11 @@ import { ListPostsComponent } from './components/posts/list/list-posts.component
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ComponentsModule
   ],
   exports: [
-    AppComponent,
-    PostComponent,
-    AddPostComponent,
-    TestComponent,
-    ListPostsComponent
+    AppComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

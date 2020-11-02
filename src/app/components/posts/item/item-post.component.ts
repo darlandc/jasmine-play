@@ -1,20 +1,20 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
-import { Post } from './interfaces/IPost';
+import { Post } from '../../../interfaces/IPost';
 
 @Component({
-  selector: 'app-post',
-  templateUrl: './post.component.html',
-  styleUrls: ['./post-component.css']
+  selector: 'app-item-post',
+  templateUrl: './item-post.component.html',
+  styleUrls: ['./item-post.component.css']
 })
-export class PostComponent implements OnInit {
+export class ItemPostComponent implements OnInit {
   total: number = 0;
   posts: Array<Post>;
   error: number;
 
   @Input() post: Partial<Post>;
   @Output() deleteMe = new EventEmitter<number>();
-  @Output() outPosts = new EventEmitter();
+  // @Output() outPosts = new EventEmitter();
 
   constructor(private postService: PostService) {
   }
@@ -24,23 +24,12 @@ export class PostComponent implements OnInit {
   like(): void {
     this.post.myLike = true;
     this.post.total++;
+    debugger
   }
 
   dislike(): void {
     this.post.myLike = false;
     this.post.total--;
-  }
-
-  getAll(): void {
-    this.postService.getPosts().subscribe(
-      posts => {
-        this.posts = posts;
-        // this.outPosts.emit(this.posts);
-      },
-      err => {
-        this.error = err.code;
-      }
-    );
   }
 
 }

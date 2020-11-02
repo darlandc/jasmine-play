@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from './../../../services/post.service';
-import { Post } from '../interfaces/IPost';
+import { Post } from '../../../interfaces/IPost';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list-posts',
@@ -11,21 +12,23 @@ export class ListPostsComponent implements OnInit {
   posts: Array<Post>;
   error: number;
 
-  constructor(private postService: PostService) {}
+  constructor(private postService: PostService) {
+    this.getAll();
+  }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  getAll(): any {
     this.postService.getPosts().subscribe((posts: Array<Post>) => {
       this.posts = posts.map(post => {
         return {
           ...post,
-          title: post.title.substr(0, 15),
-          body: post.body.substr(0, 50),
-          total: ~~(Math.random() * 10)
+          title: post.title,
+          body: post.body,
+          total: 0
         }
-      })
+      });
     });
-    console.log(this.posts);
-    debugger
   }
 
   tap(event): any {
@@ -38,6 +41,7 @@ export class ListPostsComponent implements OnInit {
       .subscribe(() =>
         this.posts.splice(this.posts.findIndex(post => post.id === e), 1)
       );
+      debugger
   }
 
   addPost(e): any {
@@ -53,7 +57,7 @@ export class ListPostsComponent implements OnInit {
     });
   }
 
-  getPosts(e){
+  favorite(e){
     console.log(e);
   }
 

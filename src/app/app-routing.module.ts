@@ -1,7 +1,7 @@
 import { AddPostComponent } from './components/posts/add/add-post.component';
 import { ListPostsComponent } from './components/posts/list/list-posts.component';
 import { TestComponent } from './components/test/test.component';
-import { PostComponent } from './components/posts/post.component';
+import { ItemPostComponent } from './components/posts/item/item-post.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
