@@ -1,19 +1,17 @@
-<p *ngFor="let post of posts">
-<mat-card-actions>
-    {{ post.title }} <span> {{ post.id }} </span>
-<!--   <button
-  mat-icon-button
-  [ngClass]="{ liked: post.myLuke }"
-  (click)="post.myLike ? dislike() : like()"></button>
-  <mat-icon>favorite</mat-icon>
-<p class="total">{{ post.total}}</p> -->
-<!-- <button
-  class="delete"
-  (click)="deleteMe,emit(post.id)"
-  mat-button
-  color="warn"
-  >
-    Delete
-</button> -->
-</mat-card-actions>
-</p>
+<div class="wrapper-title">
+    <app-add-post
+      (addPost)="addPost($event)">
+    </app-add-post>
+
+    <div class="wrapper-posts">
+    <app-post
+    *ngFor="let post of posts"
+    (deleteMe)="delete($event)">
+    [post]="post"
+    (outPosts)="getPosts($event)"
+    >
+    </app-post>
+    <br><br>
+    test
+</div>
+</div>

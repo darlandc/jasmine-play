@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '../../../services/post.service';
+import { PostService } from './../../../services/post.service';
 import { Post } from '../interfaces/IPost';
 
 @Component({
@@ -11,33 +11,21 @@ export class ListPostsComponent implements OnInit {
   posts: Array<Post>;
   error: number;
 
-  constructor(private postService: PostService) {
-    this.getAll();
-  }
-
-  private like(): any {
-    this.total++;
-  }
-
-  private dislike(): any {
-    if (this.total) {
-      this.total--;
-    }
-  }
+  constructor(private postService: PostService) {}
 
   ngOnInit(): void {
-    console.log(3333333);
-  }
-
-  getAll(): void {
-    this.postService.getPosts().subscribe(
-      posts => {
-        this.posts = posts;
-      },
-      err => {
-        this.error = err.code;
-      }
-    );
+    this.postService.getPosts().subscribe((posts: Array<Post>) => {
+      this.posts = posts.map(post => {
+        return {
+          ...post,
+          title: post.title.substr(0, 15),
+          body: post.body.substr(0, 50),
+          total: ~~(Math.random() * 10)
+        }
+      })
+    });
+    console.log(this.posts);
+    debugger
   }
 
   tap(event): any {
@@ -64,4 +52,9 @@ export class ListPostsComponent implements OnInit {
       });
     });
   }
+
+  getPosts(e){
+    console.log(e);
+  }
+
 }
