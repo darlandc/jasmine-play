@@ -1,25 +1,31 @@
+<h2>Post Component</h2>
+<button (click)="tap($event)" aria-setsize="20">Tap!</button>
+
 <div class="main">
-  <header>
-    <h1>Posts</h1>
-  </header>
-  <p class="global-likes">
-    {{ total }}
-  </p>
-  <app-addpost (addPost)="addPost($event)"></app-addpost>
   <div class="wall">
-    <app-post
+  <app-post
     *ngFor="let post of posts"
     (deleteMe)="delete($event)"
     [post]="post"
     ></app-post>
   </div>
-<!-- <ul>
-    <li>
-      <h2>Title</h2>
-      <p>Description</p>
-      <p>{{ total }}</p>
-      <button class="like" (click)="like()">like</button>
-      <button class="dislike" (click)="dislike()">like</button>
-    </li>
-  </ul> -->
 </div>
+
+<mat-card>
+<mat-card-actions>
+<!--   <button
+  mat-icon-button
+  [ngClass]="{ liked: post.myLuke }"
+  (click)="post.myLike ? dislike() : like()"></button>
+  <mat-icon>favorite</mat-icon>
+<p class="total">{{ post.total}}</p> -->
+<!-- <button
+  class="delete"
+  (click)="deleteMe,emit(post.id)"
+  mat-button
+  color="warn"
+  >
+    Delete
+</button> -->
+</mat-card-actions>
+</mat-card>
