@@ -1,11 +1,19 @@
 <div class="main">
   <header>
-    <h1>My Posts</h1>
+    <h1>Posts</h1>
   </header>
   <p class="global-likes">
     {{ total }}
   </p>
-<!--   <ul>
+  <app-addpost (addPost)="addPost($event)"></app-addpost>
+  <div class="wall">
+    <app-post
+    *ngFor="let post of posts"
+    (deleteMe)="delete($event)"
+    [post]="post"
+    ></app-post>
+  </div>
+<!-- <ul>
     <li>
       <h2>Title</h2>
       <p>Description</p>

@@ -31,7 +31,7 @@ describe('PostComponent', () => {
   });
 
   it('should decrease total if the total is not 0', () => {
-    let component = new PostComponent();
+    // let component = new PostComponent();
     component.total = 0;
     component['dislike']();
     expect(component.total).toBe(0);

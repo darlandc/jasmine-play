@@ -1,0 +1,19 @@
+<form [formGroup]="addForm">
+<div class="post-input">
+  <mat-form-field>
+    <input
+      type="text"
+      formControlName="title"
+      matInput
+      #message
+      maxlength="15"
+      placeholder="Title"
+    />
+    <mat-hint align="start" *ngIf="!addForm.get('title').valid">
+    <strong>Give us a unique post title please!</strong>
+    </mat-hint>
+    <mat-error *ngIf="expression"></mat-error>
+  </mat-form-field>
+</div>
+</form>
+
