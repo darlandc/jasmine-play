@@ -9,7 +9,7 @@
         maxlength="15"
         placeholder="Title"
       />
-      <mat-error *ngIf="error"></mat-error>
+      <mat-error *ngIf="error">Must insert a input value</mat-error>
     </mat-form-field>
     <mat-form-field>
       <input
@@ -19,7 +19,7 @@
         maxlength="100"
         placeholder="Description"
       />
-      <mat-error *ngIf="error"></mat-error>
+      <mat-error *ngIf="error">Must insert a input value</mat-error>
     </mat-form-field>
     <button class="addPost" (click)="add()" mat-button>Add</button>
   </div>
