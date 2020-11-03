@@ -25,7 +25,7 @@ export class AddPostComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  add(){
+  addPost(){
     const valid = this.addForm.valid;
     this.controls = this.addForm.controls;
     if(!valid){
@@ -39,6 +39,5 @@ export class AddPostComponent implements OnInit {
       }
       debugger
   } // end of add()
-
 
 }

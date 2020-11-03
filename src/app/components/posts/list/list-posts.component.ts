@@ -61,4 +61,9 @@ export class ListPostsComponent implements OnInit {
     console.log(e);
   }
 
+  addPostEvent(e): any {
+    console.log(e);
+    debugger
+  }
+
 }
