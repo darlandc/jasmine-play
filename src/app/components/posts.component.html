@@ -1,0 +1,16 @@
+<div class="wrapper-title">
+  <app-add-post
+  (addPostEvent)="$event">
+  </app-add-post>
+
+</div>
+<br><br>
+<div class="wrapper-posts">
+    <app-item-post
+      *ngFor="let post of posts"
+      (deleteMe)="delete($event)"
+      [post]="post"
+    >
+    </app-item-post>
+</div>
+

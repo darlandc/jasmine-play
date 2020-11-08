@@ -16,7 +16,18 @@ export class ListPostsComponent implements OnInit {
     this.getAll();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.postService.getPosts().subscribe((posts: Array<Post>) => {
+      this.posts = posts.map(post => {
+        return {
+          ...post,
+          title: post.title.substr(0, 15),
+          body: post.body.substr(0, 50),
+          total: 0
+        }
+      });
+    });
+  }
 
   getAll(): any {
     this.postService.getPosts().subscribe((posts: Array<Post>) => {
