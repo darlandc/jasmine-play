@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+/* import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
 import { Post } from '../../../interfaces/IPost';
 
@@ -33,3 +33,4 @@ export class ItemPostComponent implements OnInit {
   }
 
 }
+ */

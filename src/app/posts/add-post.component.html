@@ -1,4 +1,4 @@
-<!-- <form [formGroup]="addForm">
+<form [formGroup]="addForm">
   <div class="post-input">
     <mat-form-field>
       <input
@@ -14,14 +14,22 @@
     <mat-form-field>
       <input
         type="text"
-        formControlName="description"
+        formControlName="body"
         matInput
         maxlength="100"
         placeholder="Description"
       />
       <mat-error *ngIf="error">Must insert a input value</mat-error>
     </mat-form-field>
-    <button class="addPost" (click)="addPost()" mat-button>Add</button>
+    <button
+      class="addPost"
+      type="button"
+      mat-stroked-button
+      color="primary"
+      (click)="formSubmit()"
+      mat-button
+    >
+      Add
+    </button>
   </div>
 </form>
- -->

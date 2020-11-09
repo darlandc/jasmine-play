@@ -1,0 +1,13 @@
+<div class="main">
+  <header>
+    <h3>Wall Posts</h3>
+  </header>
+  <app-add-post-jasmine (addPost)="addPost($event)"> </app-add-post-jasmine>
+  <div class="wall">
+    <app-post-jasmine
+      *ngFor="let post of posts"
+      [post]="post"
+      (deleteMe)="delete($event)"
+    ></app-post-jasmine>
+  </div>
+</div>

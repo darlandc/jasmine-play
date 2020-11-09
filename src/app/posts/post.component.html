@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-subtitle>
+    <span>{{ post.id }}</span> {{ post.title }}</mat-card-subtitle
+  >
+  <span class="total-likes"> {{ post.total }} </span>
+  <button
+    mat-icon-button
+    [ngClass]="{ liked: post.myLike }"
+    (click)="post.myLike ? dislike() : like()"
+  >
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button class="delete" (click)="deleteMe.emit(post.id)" mat-button>
+    delete
+  </button>
+</mat-card>
+<mat-step-header></mat-step-header>

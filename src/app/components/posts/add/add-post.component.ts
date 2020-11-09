@@ -1,4 +1,4 @@
-import { PostService } from 'src/app/services/post.service';
+/* import { PostService } from 'src/app/services/post.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Post } from './../../../interfaces/IPost';
@@ -34,14 +34,15 @@ export class AddPostComponent implements OnInit {
     if(!valid){
       this.error = true;
     } else {
-/*         this.post = {
+        this.post = {
           id: this.controls['id'].value,
           title: this.controls['title'].value,
-          description: this.controls['description'].value
-        } */
+          body: this.controls['description'].value
+        }
         this.addPostEvent.emit(this.post);
       }
       // debugger
   } // end of add()
 
 }
+ */

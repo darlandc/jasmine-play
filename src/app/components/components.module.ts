@@ -8,15 +8,11 @@ import { MaterialModule } from '../material.module';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-import { ItemPostComponent } from './posts/item/item-post.component';
-import { AddPostComponent } from './posts/add/add-post.component';
 import { TestComponent } from './test/test.component';
 import { ListPostsComponent } from './posts/list/list-posts.component';
 
 @NgModule({
   declarations: [
-    ItemPostComponent,
-    AddPostComponent,
     ListPostsComponent,
     TestComponent
   ],
@@ -29,8 +25,6 @@ import { ListPostsComponent } from './posts/list/list-posts.component';
     HttpClientModule
   ],
   exports: [
-    ItemPostComponent,
-    AddPostComponent,
     ListPostsComponent,
     TestComponent
   ],
